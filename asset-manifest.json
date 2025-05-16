@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/REyyyy43/TazApp.github.io/static/css/main.1889e17d.css",
+    "main.js": "/REyyyy43/TazApp.github.io/static/js/main.bd2c2e68.js",
+    "static/js/453.bcab3089.chunk.js": "/REyyyy43/TazApp.github.io/static/js/453.bcab3089.chunk.js",
+    "index.html": "/REyyyy43/TazApp.github.io/index.html",
+    "main.1889e17d.css.map": "/REyyyy43/TazApp.github.io/static/css/main.1889e17d.css.map",
+    "main.bd2c2e68.js.map": "/REyyyy43/TazApp.github.io/static/js/main.bd2c2e68.js.map",
+    "453.bcab3089.chunk.js.map": "/REyyyy43/TazApp.github.io/static/js/453.bcab3089.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1889e17d.css",
+    "static/js/main.bd2c2e68.js"
+  ]
+}
