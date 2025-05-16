@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/REyyyy43/TazApp/static/css/main.1889e17d.css",
-    "main.js": "/REyyyy43/TazApp/static/js/main.f1ca231c.js",
-    "static/js/453.bcab3089.chunk.js": "/REyyyy43/TazApp/static/js/453.bcab3089.chunk.js",
-    "index.html": "/REyyyy43/TazApp/index.html",
-    "main.1889e17d.css.map": "/REyyyy43/TazApp/static/css/main.1889e17d.css.map",
-    "main.f1ca231c.js.map": "/REyyyy43/TazApp/static/js/main.f1ca231c.js.map",
-    "453.bcab3089.chunk.js.map": "/REyyyy43/TazApp/static/js/453.bcab3089.chunk.js.map"
+    "main.css": "/TazApp/static/css/main.1889e17d.css",
+    "main.js": "/TazApp/static/js/main.851e8b8c.js",
+    "static/js/453.bcab3089.chunk.js": "/TazApp/static/js/453.bcab3089.chunk.js",
+    "index.html": "/TazApp/index.html",
+    "main.1889e17d.css.map": "/TazApp/static/css/main.1889e17d.css.map",
+    "main.851e8b8c.js.map": "/TazApp/static/js/main.851e8b8c.js.map",
+    "453.bcab3089.chunk.js.map": "/TazApp/static/js/453.bcab3089.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1889e17d.css",
-    "static/js/main.f1ca231c.js"
+    "static/js/main.851e8b8c.js"
   ]
 }
