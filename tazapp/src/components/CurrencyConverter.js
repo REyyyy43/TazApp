@@ -5,9 +5,7 @@ const CurrencyConverter = () => {
   const [paralelo, setParalelo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
   const [selectedRate, setSelectedRate] = useState("promedio");
-
   const [usd, setUsd] = useState("");
   const [ves, setVes] = useState("");
   const [lastEdited, setLastEdited] = useState("usd"); // para saber cuál input se modificó
@@ -67,7 +65,7 @@ const CurrencyConverter = () => {
     oficial?.fechaActualizacion || paralelo?.fechaActualizacion || "N/A";
 
   return (
-    <div className="p-2">
+    <div className="p-2 md:p-0">
       <div className="bg-gray-800 p-6 text-white rounded-xl shadow-md w-full max-w-sm text-center">
         <h2 className="text-xl font-bold mb-4">Dólar en Venezuela</h2>
 
@@ -78,20 +76,32 @@ const CurrencyConverter = () => {
         ) : (
           <>
             <div className="mb-4">
-              <p><strong>Oficial (BCV):</strong> Bs. {oficial?.promedio ?? "N/A"}</p>
-              <p><strong>Paralelo:</strong> Bs. {paralelo?.promedio ?? "N/A"}</p>
-              <p><strong>Promedio:</strong> Bs. {getRate().toFixed(2)}</p>
+              <p>
+                <strong>Oficial (BCV):</strong> Bs. {oficial?.promedio ?? "N/A"}
+              </p>
+              <p>
+                <strong>Paralelo:</strong> Bs. {paralelo?.promedio ?? "N/A"}
+              </p>
+              <p>
+                <strong>Promedio general:</strong> Bs.{" "}
+                {(
+                  ((oficial?.promedio || 0) + (paralelo?.promedio || 0)) /
+                  2
+                ).toFixed(2)}
+              </p>
               <p className="text-sm text-gray-500 mt-2">
                 Última actualización: {new Date(lastUpdate).toLocaleString()}
               </p>
             </div>
 
             <div className="mb-4">
-              <label className="block font-semibold mb-1">Tipo de cambio:</label>
+              <label className="block font-semibold mb-1">
+                Tipo de cambio:
+              </label>
               <div className="border bg-gray-800 border-gray-300 rounded-lg p-3 w-full flex gap-2 justify-center">
                 <button
                   type="button"
-                  className={`px-3 py-2 rounded ${
+                  className={`px-2 py-1 rounded ${
                     selectedRate === "oficial"
                       ? "bg-blue-600 text-white"
                       : "bg-gray-700 text-gray-200"
@@ -126,15 +136,23 @@ const CurrencyConverter = () => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="usd" className="block font-semibold mb-1">USD ($):</label>
+              <label htmlFor="usd" className="block font-semibold mb-1">
+                USD ($):
+              </label>
               <input
                 id="usd"
                 type="number"
                 min="0"
                 value={usd}
                 onChange={(e) => {
-                  setUsd(e.target.value);
+                  const value = e.target.value;
+                  setUsd(value);
                   setLastEdited("usd");
+
+                  // Si se borra el contenido, borra también el otro campo
+                  if (value === "") {
+                    setVes("");
+                  }
                 }}
                 className="border bg-gray-800 border-gray-300 rounded p-2 w-full text-center"
                 placeholder="0.00"
@@ -142,15 +160,23 @@ const CurrencyConverter = () => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="ves" className="block font-semibold mb-1">Bolívares (Bs):</label>
+              <label htmlFor="ves" className="block font-semibold mb-1">
+                Bolívares (Bs):
+              </label>
               <input
                 id="ves"
                 type="number"
                 min="0"
                 value={ves}
                 onChange={(e) => {
-                  setVes(e.target.value);
+                  const value = e.target.value;
+                  setVes(value);
                   setLastEdited("ves");
+
+                  // Si se borra el contenido, borra también el otro campo
+                  if (value === "") {
+                    setUsd("");
+                  }
                 }}
                 className="border bg-gray-800 border-gray-300 rounded p-2 w-full text-center"
                 placeholder="0.00"
